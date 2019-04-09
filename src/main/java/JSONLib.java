@@ -1,3 +1,4 @@
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class JSONLib {
@@ -6,6 +7,10 @@ public class JSONLib {
     }
 
     public static String findQuestionById(int operand1) {
-        return "Сколько белых полосок на жезле инспектора ГИБДД?";
+        JSONObject modules = new JSONObject(JSONLib.getText("/json/answers_and_questions.json"));
+        JSONArray questions = modules.getJSONArray("modules");
+        JSONArray concreteQuestion = questions.getJSONArray(operand1);
+        String result = concreteQuestion.getJSONObject(0).get("question").toString();
+        return result;
     }
 }
