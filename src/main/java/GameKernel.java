@@ -1,3 +1,6 @@
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class GameKernel {
     private int nextQuestion;
     private int countOfQustions;
@@ -7,18 +10,13 @@ public class GameKernel {
     public GameKernel() {
         nextQuestion = 0;
         countOfQustions = new JSONLib().getCountQuestions();
-        step = 0;
     }
 
-    // @TODO реализовать метод получения следующего вопроса
     public String getNextQuestion() {
-        if (step == 0) {
-            step++;
-            return "Сколько белых полосок на жезле инспектора ГИБДД?";
-        } else if (step == 1) {
-            return "После какой фразы нужно вызывать сотрудников СОБР?";
-        } else {
-            return "";
-        }
+        JSONObject modules = new JSONObject(JSONLib.getText("/json/answers_and_questions.json"));
+        JSONArray questions = modules.getJSONArray("modules");
+        JSONArray concreteQuestion = questions.getJSONArray(nextQuestion);
+        nextQuestion++;
+        return concreteQuestion.getJSONObject(0).get("question").toString();
     }
 }
