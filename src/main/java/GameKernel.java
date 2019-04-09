@@ -20,8 +20,10 @@ public class GameKernel {
         return concreteQuestion.getJSONObject(0).get("question").toString();
     }
 
-    // @TODO реализовать получение правильного ответа
     public String getTrueAnswer(int numberOfQuestion) {
-        return "Может договоримся, начальник";
-    }
+        JSONObject modules = new JSONObject(JSONLib.getText("/json/answers_and_questions.json"));
+        JSONArray questions = modules.getJSONArray("modules");
+        JSONArray concreteQuestion = questions.getJSONArray(numberOfQuestion);
+        String result = concreteQuestion.getJSONObject(2).get("answer_true").toString();
+        return result;    }
 }
