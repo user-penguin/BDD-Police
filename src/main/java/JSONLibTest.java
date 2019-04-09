@@ -9,7 +9,7 @@ import org.junit.Assert;
 public class JSONLibTest {
     private JSONLib jsonLib;
     private String path;
-    private JSONObject result;
+    private String result;
 
     @Given("^I have JSONLib object$")
     public void iHaveJSONLibObject() {
@@ -29,6 +29,6 @@ public class JSONLibTest {
     @Then("^The result should be correct json$")
     public void theResultShouldBeCorrectJson() {
         JSONObject jsonObject = new JSONObject("{\"kek\": 1}");
-        Assert.assertEquals(jsonObject.toString(), result.toString());
+        Assert.assertEquals(jsonObject.toString(), result);
     }
 }
