@@ -6,6 +6,8 @@ import cucumber.api.java.en.When;
 
 public class JSONLibTest {
     @Given("^I have JSONLib object$")
+    private JSONLib jsonLib;
+
     public void iHaveJSONLibObject() {
     }
 
