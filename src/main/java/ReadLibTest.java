@@ -27,6 +27,6 @@ public class ReadLibTest {
 
     @Then("^The result should be equals \"([^\"]*)\"$")
     public void theResultShouldBeEquals(String trueResult) {
-        Assert.assertEquals(result, trueResult);
+        Assert.assertEquals(result, trueResult.replace("\\n", "\n"));
     }
 }
