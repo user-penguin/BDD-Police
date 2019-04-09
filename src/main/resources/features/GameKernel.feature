@@ -1,4 +1,4 @@
-Feature:
+Feature: Получение следующего вопроса
   Scenario:
     Given I have an object of GameKernel Class
     When I call the GetNextQuestion method
