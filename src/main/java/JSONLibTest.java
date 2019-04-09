@@ -5,16 +5,17 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class JSONLibTest {
-    @Given("^I have JSONLib object$")
     private JSONLib jsonLib;
+    private String path;
 
+    @Given("^I have JSONLib object$")
     public void iHaveJSONLibObject() {
+        this.jsonLib = new JSONLib();
     }
 
     @When("^I have run reading \"([^\"]*)\"$")
-    public void iHaveRunReading(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void iHaveRunReading(String path) {
+        this.path = path;
     }
 
     @And("^I have get result after parsing$")
