@@ -19,4 +19,9 @@ public class GameKernel {
         nextQuestion++;
         return concreteQuestion.getJSONObject(0).get("question").toString();
     }
+
+    // @TODO реализовать получение правильного ответа
+    public String getTrueAnswer(int numberOfQuestion) {
+        return "Может договоримся, начальник";
+    }
 }
