@@ -10,6 +10,8 @@ public class JSONLibTest {
     private JSONLib jsonLib;
     private String path;
     private String result;
+    private int operand1;
+    private String result2;
 
     @Given("^I have JSONLib object$")
     public void iHaveJSONLibObject() {
@@ -30,5 +32,21 @@ public class JSONLibTest {
     public void theResultShouldBeCorrectJson() {
         JSONObject jsonObject = new JSONObject("{\"kek\": 1}");
         Assert.assertEquals(jsonObject.toString(), result);
+    }
+
+    @When("^I have run finding question by id (\\d+) from file \"([^\"]*)\"$")
+    public void iHaveRunFindingQuestionByIdFromFile(int arg0, String arg1) {
+        this.path = arg1;
+        this.operand1 = arg0;
+    }
+
+    @And("^I have get result in the form of String$")
+    public void iHaveGetResultInTheFormOfString() {
+        result2 = JSONLib.findQuestionById(operand1);
+    }
+
+    @Then("^The result equals to \"([^\"]*)\"$")
+    public void theResultEqualsTo(String arg0) {
+        Assert.assertEquals(result2, arg0);
     }
 }
