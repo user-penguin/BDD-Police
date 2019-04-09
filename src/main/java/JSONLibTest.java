@@ -3,10 +3,12 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.json.JSONObject;
 
 public class JSONLibTest {
     private JSONLib jsonLib;
     private String path;
+    private JSONObject result;
 
     @Given("^I have JSONLib object$")
     public void iHaveJSONLibObject() {
@@ -20,11 +22,11 @@ public class JSONLibTest {
 
     @And("^I have get result after parsing$")
     public void iHaveGetResultAfterParsing() {
+
     }
 
-    @Then("^I The result should be equals \"([^\"]*)\"$")
-    public void iTheResultShouldBeEquals(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    @Then("^The result should be correct json$")
+    public void theResultShouldBeCorrectJson() {
+
     }
 }
