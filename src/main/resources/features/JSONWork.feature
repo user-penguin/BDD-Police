@@ -4,8 +4,6 @@ Feature: Reading JSON
     When I have run reading "/json/test.json"
     And I have get result after parsing
     Then The result should be correct json
-
-Feature: Reading question
   Scenario:
     Given I have JSONLib object
     When I have run finding question by id 0 from file "/json/answers_and_questions.json"
