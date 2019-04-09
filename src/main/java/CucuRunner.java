@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/resources/specification"}
+        features = {"target"}
 )
 public class CucuRunner {
 
