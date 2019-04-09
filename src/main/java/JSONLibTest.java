@@ -49,4 +49,19 @@ public class JSONLibTest {
     public void theResultEqualsTo(String arg0) {
         Assert.assertEquals(result2, arg0);
     }
+
+    @When("^I have run getCountQection method from file \"([^\"]*)\"$")
+    public void iHaveRunGetCountQectionMethodFromFile(String arg0)  {
+        this.path = arg0;
+    }
+
+    @And("^I have get result in the form of Integer$")
+    public void iHaveGetResultInTheFormOfInteger() {
+        result = jsonLib.getCountQuestions();
+    }
+
+    @Then("^The result equals to (\\d+)$")
+    public void theResultEqualsTo(int arg0) {
+        Assert.assertEquals(result, 3);
+    }
 }

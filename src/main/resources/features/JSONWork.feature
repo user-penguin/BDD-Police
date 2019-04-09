@@ -9,3 +9,8 @@ Feature: Reading JSON
     When I have run finding question by id 0 from file "/json/answers_and_questions.json"
     And I have get result in the form of String
     Then The result equals to "Сколько белых полосок на жезле инспектора ГИБДД?"
+  Scenario:
+    Given I have JSONLib object
+    When I have run getCountQection method from file "/json/answers_and_questions.json"
+    And I have get result in the form of Integer
+    Then The result equals to 3
