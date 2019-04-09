@@ -12,6 +12,7 @@ public class JSONLibTest {
     private String result;
     private int operand1;
     private String result2;
+    private int result3;
 
     @Given("^I have JSONLib object$")
     public void iHaveJSONLibObject() {
@@ -57,11 +58,11 @@ public class JSONLibTest {
 
     @And("^I have get result in the form of Integer$")
     public void iHaveGetResultInTheFormOfInteger() {
-        result = jsonLib.getCountQuestions();
+        result3 = jsonLib.getCountQuestions();
     }
 
     @Then("^The result equals to (\\d+)$")
     public void theResultEqualsTo(int arg0) {
-        Assert.assertEquals(result, 3);
+        Assert.assertEquals(result3, 3);
     }
 }

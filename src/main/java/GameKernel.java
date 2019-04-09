@@ -5,6 +5,6 @@ public class GameKernel {
 
     public GameKernel() {
         nextQuestion = 0;
-        countOfQustions = JSONLib.getCountQuestions();
+        countOfQustions = new JSONLib().getCountQuestions();
     }
 }

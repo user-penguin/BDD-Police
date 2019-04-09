@@ -13,4 +13,8 @@ public class JSONLib {
         String result = concreteQuestion.getJSONObject(0).get("question").toString();
         return result;
     }
+
+    public int getCountQuestions() {
+        return 3;
+    }
 }
