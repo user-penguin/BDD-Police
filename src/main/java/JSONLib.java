@@ -15,6 +15,8 @@ public class JSONLib {
     }
 
     public int getCountQuestions() {
-        return 3;
+        JSONObject modules = new JSONObject(JSONLib.getText("/json/answers_and_questions.json"));
+        JSONArray questions = modules.getJSONArray("modules");
+        return questions.length();
     }
 }
