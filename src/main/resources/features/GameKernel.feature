@@ -10,4 +10,4 @@ Feature: Логика игрового ядра
     Given I have an object of GameKernel Class
     When I have input number of question 1
     And I have call the method that should return true answer
-    When I get the answer "Может договоримся, начальник"
+    Then I get the answer "Может договоримся, начальник"
